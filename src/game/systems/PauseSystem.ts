@@ -2,6 +2,7 @@ import { navigation } from "@/navigation";
 import { PauseOverlay } from "@/screens/overlays/PauseOverlay";
 import { Game } from "../index";
 import type { System } from "../SystemRunner";
+import { RunnerSystem } from "./RunnerSystem";
 
 export class PauseSystem implements System {
     public static SYSTEM_ID = 'pause';
@@ -26,8 +27,9 @@ export class PauseSystem implements System {
     public pause() {
         this.isPaused = true;
 
+        const runner = this.game.systems.get(RunnerSystem);
         navigation.showOverlay(PauseOverlay, {
-            score: 0,
+            score: Math.floor(runner.totalProgress),
             callback: this._pauseCallback.bind(this),
         });
     }

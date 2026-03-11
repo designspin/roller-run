@@ -29,13 +29,15 @@ function resize() {
 }
 
 async function init() {
-  navigation.init();
+  
   
   await app.init({
     resolution: Math.min(Math.max(window.devicePixelRatio || 1, 1), 2),
     background: 0x000000,
     resizeTo: window,
   });
+
+  navigation.init();
 
   app.stage.addChild(backgroundContainer, gameContainer);
 

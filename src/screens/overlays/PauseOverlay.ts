@@ -28,11 +28,11 @@ class PausePanel {
         });
 
         this._titleText.anchor.set(0.5);
-        this._titleText.y = -(this._base.height * 0.5) + 35;
+        this._titleText.y = -(this._base.height * 0.5) + 32;
         this._base.addChild(this._titleText);
 
         this._scoreTitleText = new Text({
-            text: "CURRENT SCORE",
+            text: "DISTANCE",
             style: {
                 fontFamily: "BebasNeue Regular",
                 fontSize: 24,
@@ -42,7 +42,7 @@ class PausePanel {
         });
 
         this._scoreTitleText.anchor.set(0.5);
-        this._scoreTitleText.y = -10;
+        this._scoreTitleText.y = -55;
         this._base.addChild(this._scoreTitleText);
 
         this._scoreText = new Text({
@@ -57,7 +57,7 @@ class PausePanel {
         });
 
         this._scoreText.anchor.set(0.5);
-        this._scoreText.y = 20;
+        this._scoreText.y = -15;
         this._base.addChild(this._scoreText);
     }
 
@@ -150,7 +150,7 @@ export class PauseOverlay extends Container implements AppScreen
                 align: 'center'
             },
             text: "RESUME",
-            tint: 0xffc42c,
+            tint: 0x4caf50,
             buttonOptions: {
                 scale: 0.6,
             }
@@ -164,7 +164,7 @@ export class PauseOverlay extends Container implements AppScreen
                 align: 'center'
             },
             text: "QUIT",
-            tint: 0x000000,
+            tint: 0xe53935,
             buttonOptions: {
                 scale: 0.6,
             }
