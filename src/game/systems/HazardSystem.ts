@@ -224,20 +224,20 @@ export abstract class HazardSystem implements System {
         const p = this._trail.find(t => !t.active);
         if (!p) return;
 
-        const rng = this.game.rng;
         const cfg = this._config;
         const [sx, sy] = cfg.trailSpreadXY;
+        const rand = Math.random;
 
         p.active = true;
-        p.x = h.x + rng.nextRange(-sx, sx);
-        p.y = h.y + rng.nextRange(-sy, sy);
+        p.x = h.x + rand() * sx * 2 - sx;
+        p.y = h.y + rand() * sy * 2 - sy;
         p.prevX = p.x;
         p.prevY = p.y;
-        p.vx = rng.nextRange(cfg.trailVxRange[0], cfg.trailVxRange[1]);
-        p.vy = -rng.nextRange(cfg.trailVyRange[0], cfg.trailVyRange[1]);
-        p.maxLife = rng.nextRange(cfg.trailLifeRange[0], cfg.trailLifeRange[1]);
+        p.vx = cfg.trailVxRange[0] + rand() * (cfg.trailVxRange[1] - cfg.trailVxRange[0]);
+        p.vy = -(cfg.trailVyRange[0] + rand() * (cfg.trailVyRange[1] - cfg.trailVyRange[0]));
+        p.maxLife = cfg.trailLifeRange[0] + rand() * (cfg.trailLifeRange[1] - cfg.trailLifeRange[0]);
         p.life = p.maxLife;
-        p.sprite.tint = rng.next() < 0.5 ? cfg.trailTints[0] : cfg.trailTints[1];
+        p.sprite.tint = rand() < 0.5 ? cfg.trailTints[0] : cfg.trailTints[1];
         p.sprite.scale.set(2);
         p.sprite.alpha = 1;
         p.sprite.visible = true;

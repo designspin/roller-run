@@ -66,7 +66,9 @@ export class CollectibleSystem implements System {
 
     public fixedUpdate(fixedDelta: number) {
         const track = this.game.systems.get(TrackSystem);
+        const runner = this.game.systems.get(RunnerSystem);
         const segments = track.generator.segments;
+        const ballY = runner.ball.fixedY;
 
         for (let i = this._lastProcessedSegment + 1; i < segments.length; i++) {
             const seg = segments[i];
@@ -86,10 +88,14 @@ export class CollectibleSystem implements System {
         }
 
         const ps = this.game.systems.get(ParticleSystem);
-        const rng = this.game.rng;
         for (const c of this._pool) {
             if (!c.active) continue;
-            if (rng.next() < this._sparkRate * fixedDelta) {
+            if (c.yFixed > ballY + 800) {
+                debugger;
+                c.clear();
+                continue;
+            }
+            if (Math.random() < this._sparkRate * fixedDelta) {
                 ps.spawnCollectSpark(c.xFixed, c.yFixed);
             }
         }
@@ -115,6 +121,17 @@ export class CollectibleSystem implements System {
                 ps.spawnCollectBurst(c.x, c.y);
             }
         }
+    }
+
+    public reset() {
+        for (const c of this._pool) {
+            c.clear();
+        }
+        this._lastProcessedSegment = -1;
+    }
+
+    public adjustProgress(delta: number) {
+        this._lastProcessedSegment += delta;
     }
 
     public rebase(offsetX: number, offsetY: number) {

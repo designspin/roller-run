@@ -39,9 +39,17 @@ export class SystemRunner {
     private readonly _game: Game;
     public readonly allSystems: Map<string, System> = new Map();
 
+    private _afterFixedUpdate: Array<{ cb: (fixedDelta: number) => void; once?: boolean }> = [];
+
     constructor(game: Game) {
         this._game = game;
         this.FIXED_TIMESTAMP = 1 / this.PHYSICS_HZ;
+    }
+
+    public onAfterFixedUpdate(cb: (fixedDelta: number) => void, opts?: { once?: boolean }) {
+        const entry = { cb, once: !!opts?.once };
+        this._afterFixedUpdate.push(entry);
+        return () => { this._afterFixedUpdate = this._afterFixedUpdate.filter(e => e !== entry); };
     }
 
     public add<S extends System>(Class: SystemClass<Game, S>): S {
@@ -116,6 +124,16 @@ export class SystemRunner {
 
     private runPhysicsUpdate(fixedDelta: number) {
         this.allSystems.forEach(system => system.fixedUpdate?.(fixedDelta));
+
+        const callbacks = this._afterFixedUpdate.slice();
+        for(const callback of callbacks) {
+            try {
+                callback.cb(fixedDelta);
+            } catch(err) {
+                console.error('Error in afterFixedUpdate callback:', err);
+            }
+        }
+        this._afterFixedUpdate = this._afterFixedUpdate.filter(cb => !cb.once);
     }
 
     public end() {

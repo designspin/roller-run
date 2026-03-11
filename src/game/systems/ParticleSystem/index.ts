@@ -4,6 +4,10 @@ import { TrackSystem } from "../TrackSystem";
 import { Container, Sprite, Texture } from "pixi.js";
 import { createParticleRecord, resetParticle, type ParticleRecord } from "./ParticleRecord";
 
+const rand = Math.random;
+const range = (min: number, max: number) => min + rand() * (max - min);
+const choose = <T>(items: T[]): T => items[Math.floor(rand() * items.length)];
+
 export class ParticleSystem implements System {
     public static SYSTEM_ID = 'particle';
     public game!: Game;
@@ -21,7 +25,6 @@ export class ParticleSystem implements System {
 
     public spawnCollectBurst(x: number, y: number) {
         const particleCount = 12;
-        const rnd = this.game.rng;
         const tintChoices = [0xffd86b, 0xffe59a, 0xffc84b];
 
         for (let i = 0; i < particleCount; i++) {
@@ -30,23 +33,23 @@ export class ParticleSystem implements System {
 
             particle.active = true;
             particle.sprite.visible = true;
-            particle.x = x + rnd.nextRange(-6, 6);
-            particle.y = y + rnd.nextRange(-6, 6);
+            particle.x = x + range(-6, 6);
+            particle.y = y + range(-6, 6);
             particle.prevX = particle.x;
             particle.prevY = particle.y;
-            particle.maxLife = rnd.nextRange(0.28, 0.6);
+            particle.maxLife = range(0.28, 0.6);
             particle.life = particle.maxLife;
-            const speed = rnd.nextRange(80, 240);
-            const angle = rnd.nextRange(-Math.PI, Math.PI);
+            const speed = range(80, 240);
+            const angle = range(-Math.PI, Math.PI);
             particle.vx = Math.cos(angle) * speed;
-            particle.vy = Math.sin(angle) * speed - rnd.nextRange(40, 120);
-            particle.rotation = rnd.nextRange(-Math.PI, Math.PI);
-            particle.spin = rnd.nextRange(-6, 6);
-            particle.startScale = rnd.nextRange(0.6, 1.2);
+            particle.vy = Math.sin(angle) * speed - range(40, 120);
+            particle.rotation = range(-Math.PI, Math.PI);
+            particle.spin = range(-6, 6);
+            particle.startScale = range(0.6, 1.2);
             particle.endScale = 0.12;
             particle.startAlpha = 1;
             particle.endAlpha = 0;
-            particle.tint = rnd.choose(tintChoices);
+            particle.tint = choose(tintChoices);
             particle.sprite.alpha = particle.startAlpha;
             particle.sprite.scale.set(particle.startScale);
             particle.sprite.rotation = particle.rotation;
@@ -55,29 +58,28 @@ export class ParticleSystem implements System {
     }
 
     public spawnCollectSpark(x: number, y: number) {
-        const rnd = this.game.rng;
         const particle = this._getFreeParticle();
         if (!particle) return;
 
         particle.active = true;
         particle.sprite.visible = true;
-        particle.x = x + rnd.nextRange(-3, 3);
-        particle.y = y + rnd.nextRange(-3, 3);
+        particle.x = x + range(-3, 3);
+        particle.y = y + range(-3, 3);
         particle.prevX = particle.x;
         particle.prevY = particle.y;
-        particle.maxLife = rnd.nextRange(0.18, 0.36);
+        particle.maxLife = range(0.18, 0.36);
         particle.life = particle.maxLife;
-        const speed = rnd.nextRange(30, 120);
-        const angle = rnd.nextRange(-Math.PI, Math.PI);
+        const speed = range(30, 120);
+        const angle = range(-Math.PI, Math.PI);
         particle.vx = Math.cos(angle) * speed;
-        particle.vy = Math.sin(angle) * speed - rnd.nextRange(20, 60);
-        particle.rotation = rnd.nextRange(-Math.PI, Math.PI);
-        particle.spin = rnd.nextRange(-4, 4);
-        particle.startScale = rnd.nextRange(0.28, 0.6);
+        particle.vy = Math.sin(angle) * speed - range(20, 60);
+        particle.rotation = range(-Math.PI, Math.PI);
+        particle.spin = range(-4, 4);
+        particle.startScale = range(0.28, 0.6);
         particle.endScale = 0.06;
         particle.startAlpha = 1;
         particle.endAlpha = 0;
-        particle.tint = rnd.choose([0xffd86b, 0xffe59a, 0xffc84b]);
+        particle.tint = choose([0xffd86b, 0xffe59a, 0xffc84b]);
         particle.sprite.alpha = particle.startAlpha;
         particle.sprite.scale.set(particle.startScale);
         particle.sprite.rotation = particle.rotation;
@@ -174,7 +176,6 @@ export class ParticleSystem implements System {
         screenX: number,
     ) {
         const particleCount = 56;
-        const rnd = this.game.rng;
         const centerDir = screenX < this.game.gameContainer.width * 0.5 ? 1 : -1;
         const centerBias = centerDir * 320;
         const sideBias = side * 70;
@@ -192,17 +193,17 @@ export class ParticleSystem implements System {
             particle.y = y;
             particle.prevX = x;
             particle.prevY = y;
-            particle.maxLife = isCoreBurst ? rnd.nextRange(1.1, 1.9) : rnd.nextRange(1.0, 1.7);
+            particle.maxLife = isCoreBurst ? range(1.1, 1.9) : range(1.0, 1.7);
             particle.life = particle.maxLife;
-            particle.vx = baseVX * 0.15 + centerBias + sideBias + rnd.nextRange(-320, 320);
-            particle.vy = baseVY * 0.12 + rnd.nextRange(-320, 220);
-            particle.rotation = rnd.nextRange(-Math.PI, Math.PI);
-            particle.spin = rnd.nextRange(-18, 18);
-            particle.startScale = isCoreBurst ? rnd.nextRange(1.8, 3.8) : rnd.nextRange(1.2, 2.6);
-            particle.endScale = rnd.nextRange(0.18, 0.45);
-            particle.startAlpha = rnd.nextRange(0.9, 1);
+            particle.vx = baseVX * 0.15 + centerBias + sideBias + range(-320, 320);
+            particle.vy = baseVY * 0.12 + range(-320, 220);
+            particle.rotation = range(-Math.PI, Math.PI);
+            particle.spin = range(-18, 18);
+            particle.startScale = isCoreBurst ? range(1.8, 3.8) : range(1.2, 2.6);
+            particle.endScale = range(0.18, 0.45);
+            particle.startAlpha = range(0.9, 1);
             particle.endAlpha = 0;
-            particle.tint = isCoreBurst ? rnd.choose([0xd9ffe8, 0xb8ffcf, 0x8cffb0]) : rnd.choose(tintChoices);
+            particle.tint = isCoreBurst ? choose([0xd9ffe8, 0xb8ffcf, 0x8cffb0]) : choose(tintChoices);
         }
     }
 
@@ -216,7 +217,6 @@ export class ParticleSystem implements System {
     ) {
         const intensity = Math.min(1, impact / 700);
         const particleCount = 14 + Math.round(intensity * 14);
-        const rnd = this.game.rng;
         const tangentX = ny;
         const tangentY = -nx;
         const outwardX = nx * side;
@@ -229,27 +229,27 @@ export class ParticleSystem implements System {
             const particle = this._getFreeParticle();
             if (!particle) break;
 
-            const tangentDrift = rnd.nextRange(-150, 150);
-            const outwardBurst = rnd.nextRange(70, 210) * (0.8 + intensity * 0.9);
-            const lift = rnd.nextRange(20, 120) * (0.55 + intensity);
+            const tangentDrift = range(-150, 150);
+            const outwardBurst = range(70, 210) * (0.8 + intensity * 0.9);
+            const lift = range(20, 120) * (0.55 + intensity);
 
             particle.active = true;
             particle.sprite.visible = true;
-            particle.x = contactX + tangentX * rnd.nextRange(-8, 8);
-            particle.y = contactY + tangentY * rnd.nextRange(-6, 6);
+            particle.x = contactX + tangentX * range(-8, 8);
+            particle.y = contactY + tangentY * range(-6, 6);
             particle.prevX = particle.x;
             particle.prevY = particle.y;
-            particle.maxLife = rnd.nextRange(0.3, 0.54);
+            particle.maxLife = range(0.3, 0.54);
             particle.life = particle.maxLife;
             particle.vx = tangentX * tangentDrift + outwardX * outwardBurst;
             particle.vy = tangentY * tangentDrift + outwardY * outwardBurst - lift;
-            particle.rotation = rnd.nextRange(-Math.PI, Math.PI);
-            particle.spin = rnd.nextRange(-10, 10);
-            particle.startScale = rnd.nextRange(0.55, 1.15) * (1 + intensity * 0.8);
-            particle.endScale = rnd.nextRange(0.08, 0.22);
-            particle.startAlpha = rnd.nextRange(0.8, 1);
+            particle.rotation = range(-Math.PI, Math.PI);
+            particle.spin = range(-10, 10);
+            particle.startScale = range(0.55, 1.15) * (1 + intensity * 0.8);
+            particle.endScale = range(0.08, 0.22);
+            particle.startAlpha = range(0.8, 1);
             particle.endAlpha = 0;
-            particle.tint = rnd.choose(tintChoices);
+            particle.tint = choose(tintChoices);
             particle.sprite.alpha = particle.startAlpha;
             particle.sprite.scale.set(particle.startScale);
             particle.sprite.rotation = particle.rotation;

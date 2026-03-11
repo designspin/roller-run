@@ -6,7 +6,7 @@ import { RunnerSystem } from "../RunnerSystem";
 import { getDifficultyParams } from "@/game/difficulty";
 
 const REBASEABLE_SYSTEMS = ['collectible', 'spark', 'blocker', 'particle'] as const;
-const PROGRESS_SYSTEMS = ['spark', 'blocker'] as const;
+const PROGRESS_SYSTEMS = ['collectible', 'spark', 'blocker'] as const;
 
 export class TrackSystem implements System {
     public static SYSTEM_ID = 'track';
@@ -17,6 +17,7 @@ export class TrackSystem implements System {
     public generator!: TrackGenerator;
     private _trackRenderer!: TrackRenderer;
     private _isDirty = true;
+    private _pendingRebase: number | null = null;
 
     get halfWidth() {
         return this._trackRenderer.halfWidth;
@@ -64,11 +65,24 @@ export class TrackSystem implements System {
         }
 
         if (runner.worldCenterY < TrackSystem.REBASE_Y_THRESHOLD) {
-            this.generator.rebase(0, runner.worldCenterY);
-            runner.rebaseWorld(0, runner.worldCenterY);
+            // defer the actual coordinate rebase until after all systems have run their fixedUpdate
+            // to avoid ordering/race issues where other systems clear or sample coordinates mid-tick.
+            if (this._pendingRebase === null) {
+                this._pendingRebase = runner.worldCenterY;
+                this.game.systems.onAfterFixedUpdate((_) => {
+                    const offsetY = this._pendingRebase as number;
+                    this.generator.rebase(0, offsetY);
+                    runner.rebaseWorld(0, offsetY);
 
-            for (const id of REBASEABLE_SYSTEMS) {
-                this.game.systems.allSystems.get(id)?.rebase?.(0, runner.worldCenterY);
+                    for (const id of REBASEABLE_SYSTEMS) {
+                        this.game.systems.allSystems.get(id)?.rebase?.(0, offsetY);
+                    }
+
+                    // rebuild renderer now that rebase is applied
+                    this._trackRenderer.rebuild(TrackSystem.RENDER_SEGMENT_COUNT);
+                    this._isDirty = false;
+                    this._pendingRebase = null;
+                }, { once: true });
             }
             changed = true;
         }
