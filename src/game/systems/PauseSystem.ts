@@ -49,7 +49,7 @@ export class PauseSystem implements System {
 
         if (state === 'resume') this.resume();
         else {
-            this.game.reset();
+            this.game.onQuit?.();
         }
     }
 }

@@ -188,6 +188,11 @@ export class TrackRenderer extends Container {
         this._distances = distances;
     }
 
+    public reset() {
+        this._distanceOffset = 0;
+        this._distances = new Float32Array(0);
+    }
+
     public notifyCull(pointCount: number) {
         const sampleIndex = TrackRenderer.SAMPLES_PER_SEGMENT * pointCount;
 

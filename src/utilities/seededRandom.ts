@@ -1,8 +1,14 @@
 export class SeededRandom {
     private seed: number;
+    private readonly _initialSeed: number;
 
     constructor(seed: number) {
+        this._initialSeed = seed;
         this.seed = seed;
+    }
+
+    reset() {
+        this.seed = this._initialSeed;
     }
 
     next(): number {

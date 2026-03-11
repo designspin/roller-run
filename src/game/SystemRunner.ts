@@ -141,6 +141,8 @@ export class SystemRunner {
     }
 
     public reset() {
+        this.accumulator = 0;
+        this._afterFixedUpdate = [];
         this.allSystems.forEach(system => system.reset?.());
     }
 }

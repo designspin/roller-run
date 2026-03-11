@@ -89,6 +89,9 @@ export class TrackSystem implements System {
     }
 
     public reset() {
+        this._pendingRebase = null;
+        this.generator.reset();
+        this._trackRenderer.reset();
         this._isDirty = true;
     }
 }

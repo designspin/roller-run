@@ -4,6 +4,8 @@ import { Game } from "../game";
 import { RunnerSystem } from "../game/systems/RunnerSystem";
 import { CheckerboardFilter } from "../shaders/CheckerboardFilter";
 import { DistanceHUD } from "./overlays";
+import { navigation } from "../navigation";
+import { TitleScreen } from "./TitleScreen";
 
 export class GameScreen extends Container implements AppScreen {
     public static SCREEN_ID = "GameScreen";
@@ -27,6 +29,7 @@ export class GameScreen extends Container implements AppScreen {
 
         this._game = new Game();
         this._game.init();
+        this._game.onQuit = () => navigation.gotoScreen(TitleScreen);
         this.addChild(this._game.stage);
 
         // Add Distance HUD overlay above the game

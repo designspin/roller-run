@@ -16,6 +16,7 @@ export class Game {
     public uiContainer = new Container();
     public systems: SystemRunner;
     public rng = new SeededRandom(42);
+    public onQuit?: () => void;
 
     constructor() {
         this.stage.addChild(this.gameContainer, this.uiContainer);
@@ -61,6 +62,7 @@ export class Game {
     }
 
     public reset() {
+        this.rng.reset();
         this.systems.reset();
     }
 }

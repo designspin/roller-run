@@ -26,12 +26,12 @@ const defaults: Required<TrackGenConfig> = {
 
 export class TrackGenerator {
     public readonly rng: SeededRandom;
-    private _points: PointData[] = [];
-    private _segments: TrackSegment[] = [];
-    private _gapCooldown = 5;
-    private _gapProbability = 0.15;
-    private _gapMinCooldown = 3;
-    private _collectibleCooldown = 0;
+    private _points!: PointData[];
+    private _segments!: TrackSegment[];
+    private _gapCooldown!: number;
+    private _gapProbability!: number;
+    private _gapMinCooldown!: number;
+    private _collectibleCooldown!: number;
     private _collectibleProbability = 0.7;
     private _collectibleMinCooldown = 1;
 
@@ -40,8 +40,22 @@ export class TrackGenerator {
     constructor(rng: SeededRandom, config: TrackGenConfig = {}) {
         this.rng = rng;
         this._config = { ...defaults, ...config };
+        this._initialize();
+    }
 
-        for(let i = 0; i < 15; i++) {
+    public reset() {
+        this._initialize();
+    }
+
+    private _initialize() {
+        this._points = [];
+        this._segments = [];
+        this._gapCooldown = 5;
+        this._gapProbability = 0.15;
+        this._gapMinCooldown = 3;
+        this._collectibleCooldown = 0;
+
+        for (let i = 0; i < 15; i++) {
             this.generateNext();
         }
     }

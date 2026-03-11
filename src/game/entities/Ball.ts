@@ -221,6 +221,7 @@ export class Ball extends Container {
 
     public reset() {
         this._juiceToken++;
+        this._side = 1;
         this._jumpOffset = 0;
         this._jumpVelocity = 0;
         this._isJumping = false;
