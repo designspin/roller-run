@@ -1,0 +1,1416 @@
+{
+    "assets": {
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets": {
+            "isFolder": true,
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773194173618,
+                "duration": 3.401707999999985,
+                "success": true
+            }
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/audio": {
+            "isFolder": true,
+            "parent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773192702106,
+                "duration": 0.5002079999999864,
+                "success": true
+            }
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/audio/collect.wav": {
+            "isFolder": false,
+            "parent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/audio",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773191918150,
+                "duration": 36.15825000000001,
+                "success": true
+            },
+            "hash": "IBNWEA"
+        },
+        ".assetpack/audio/audio/collect.mp3": {
+            "isFolder": false,
+            "transformParent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/audio/collect.wav",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/public/audio/collect.mp3": {
+            "isFolder": false,
+            "transformParent": ".assetpack/audio/audio/collect.mp3",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        ".assetpack/audio/audio/collect.ogg": {
+            "isFolder": false,
+            "transformParent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/audio/collect.wav",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/public/audio/collect.ogg": {
+            "isFolder": false,
+            "transformParent": ".assetpack/audio/audio/collect.ogg",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/audio/contact-ground.wav": {
+            "isFolder": false,
+            "parent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/audio",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773191989559,
+                "duration": 32.772042,
+                "success": true
+            },
+            "hash": "1i8FEw"
+        },
+        ".assetpack/audio/audio/contact-ground.mp3": {
+            "isFolder": false,
+            "transformParent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/audio/contact-ground.wav",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/public/audio/contact-ground.mp3": {
+            "isFolder": false,
+            "transformParent": ".assetpack/audio/audio/contact-ground.mp3",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        ".assetpack/audio/audio/contact-ground.ogg": {
+            "isFolder": false,
+            "transformParent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/audio/contact-ground.wav",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/public/audio/contact-ground.ogg": {
+            "isFolder": false,
+            "transformParent": ".assetpack/audio/audio/contact-ground.ogg",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/audio/double-jump.wav": {
+            "isFolder": false,
+            "parent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/audio",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773191418172,
+                "duration": 1351.684458,
+                "success": true
+            },
+            "hash": "Ue9d2w"
+        },
+        ".assetpack/audio/audio/double-jump.mp3": {
+            "isFolder": false,
+            "transformParent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/audio/double-jump.wav",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/public/audio/double-jump.mp3": {
+            "isFolder": false,
+            "transformParent": ".assetpack/audio/audio/double-jump.mp3",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        ".assetpack/audio/audio/double-jump.ogg": {
+            "isFolder": false,
+            "transformParent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/audio/double-jump.wav",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/public/audio/double-jump.ogg": {
+            "isFolder": false,
+            "transformParent": ".assetpack/audio/audio/double-jump.ogg",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/audio/explosion.wav": {
+            "isFolder": false,
+            "parent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/audio",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773191706494,
+                "duration": 61.976166000000035,
+                "success": true
+            },
+            "hash": "mvPlvw"
+        },
+        ".assetpack/audio/audio/explosion.mp3": {
+            "isFolder": false,
+            "transformParent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/audio/explosion.wav",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/public/audio/explosion.mp3": {
+            "isFolder": false,
+            "transformParent": ".assetpack/audio/audio/explosion.mp3",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        ".assetpack/audio/audio/explosion.ogg": {
+            "isFolder": false,
+            "transformParent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/audio/explosion.wav",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/public/audio/explosion.ogg": {
+            "isFolder": false,
+            "transformParent": ".assetpack/audio/audio/explosion.ogg",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/audio/jump.wav": {
+            "isFolder": false,
+            "parent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/audio",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773191418172,
+                "duration": 1350.048792,
+                "success": true
+            },
+            "hash": "GrUePA"
+        },
+        ".assetpack/audio/audio/jump.mp3": {
+            "isFolder": false,
+            "transformParent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/audio/jump.wav",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/public/audio/jump.mp3": {
+            "isFolder": false,
+            "transformParent": ".assetpack/audio/audio/jump.mp3",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        ".assetpack/audio/audio/jump.ogg": {
+            "isFolder": false,
+            "transformParent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/audio/jump.wav",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/public/audio/jump.ogg": {
+            "isFolder": false,
+            "transformParent": ".assetpack/audio/audio/jump.ogg",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/audio/start1.wav": {
+            "isFolder": false,
+            "parent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/audio",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773192702106,
+                "duration": 84.62787499999996,
+                "success": true
+            },
+            "hash": "1pfzqQ"
+        },
+        ".assetpack/audio/audio/start1.mp3": {
+            "isFolder": false,
+            "transformParent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/audio/start1.wav",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/public/audio/start1.mp3": {
+            "isFolder": false,
+            "transformParent": ".assetpack/audio/audio/start1.mp3",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        ".assetpack/audio/audio/start1.ogg": {
+            "isFolder": false,
+            "transformParent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/audio/start1.wav",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/public/audio/start1.ogg": {
+            "isFolder": false,
+            "transformParent": ".assetpack/audio/audio/start1.ogg",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/audio/start2.wav": {
+            "isFolder": false,
+            "parent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/audio",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773192702106,
+                "duration": 84.95387499999998,
+                "success": true
+            },
+            "hash": "alyIcQ"
+        },
+        ".assetpack/audio/audio/start2.mp3": {
+            "isFolder": false,
+            "transformParent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/audio/start2.wav",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/public/audio/start2.mp3": {
+            "isFolder": false,
+            "transformParent": ".assetpack/audio/audio/start2.mp3",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        ".assetpack/audio/audio/start2.ogg": {
+            "isFolder": false,
+            "transformParent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/audio/start2.wav",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/public/audio/start2.ogg": {
+            "isFolder": false,
+            "transformParent": ".assetpack/audio/audio/start2.ogg",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/audio/start3.wav": {
+            "isFolder": false,
+            "parent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/audio",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773192702106,
+                "duration": 84.565875,
+                "success": true
+            },
+            "hash": "fBLndg"
+        },
+        ".assetpack/audio/audio/start3.mp3": {
+            "isFolder": false,
+            "transformParent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/audio/start3.wav",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/public/audio/start3.mp3": {
+            "isFolder": false,
+            "transformParent": ".assetpack/audio/audio/start3.mp3",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        ".assetpack/audio/audio/start3.ogg": {
+            "isFolder": false,
+            "transformParent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/audio/start3.wav",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/public/audio/start3.ogg": {
+            "isFolder": false,
+            "transformParent": ".assetpack/audio/audio/start3.ogg",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/audio/start4.wav": {
+            "isFolder": false,
+            "parent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/audio",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773192702106,
+                "duration": 85.24658300000004,
+                "success": true
+            },
+            "hash": "ev7gAA"
+        },
+        ".assetpack/audio/audio/start4.mp3": {
+            "isFolder": false,
+            "transformParent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/audio/start4.wav",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/public/audio/start4.mp3": {
+            "isFolder": false,
+            "transformParent": ".assetpack/audio/audio/start4.mp3",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        ".assetpack/audio/audio/start4.ogg": {
+            "isFolder": false,
+            "transformParent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/audio/start4.wav",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/public/audio/start4.ogg": {
+            "isFolder": false,
+            "transformParent": ".assetpack/audio/audio/start4.ogg",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/fonts": {
+            "isFolder": true,
+            "parent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773163365351,
+                "duration": 0.9365839999999821,
+                "success": true
+            }
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/fonts/BebasNeue-Regular.ttf": {
+            "isFolder": false,
+            "parent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/fonts",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773163365351,
+                "duration": 0.9302079999999933,
+                "success": true
+            },
+            "hash": "PTcW"
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/public/fonts/BebasNeue-Regular.ttf": {
+            "isFolder": false,
+            "transformParent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/fonts/BebasNeue-Regular.ttf",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/fonts/Bungee-Regular.ttf": {
+            "isFolder": false,
+            "parent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/fonts",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773163365352,
+                "duration": 0.48929099999998016,
+                "success": true
+            },
+            "hash": "cAr2jA"
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/public/fonts/Bungee-Regular.ttf": {
+            "isFolder": false,
+            "transformParent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/fonts/Bungee-Regular.ttf",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/fonts/OpenSans-SemiBold.ttf": {
+            "isFolder": false,
+            "parent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/fonts",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773163365352,
+                "duration": 0.2565420000000245,
+                "success": true
+            },
+            "hash": "UirUJg"
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/public/fonts/OpenSans-SemiBold.ttf": {
+            "isFolder": false,
+            "transformParent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/fonts/OpenSans-SemiBold.ttf",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/images": {
+            "isFolder": true,
+            "parent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773194173618,
+                "duration": 3.2415829999999914,
+                "success": true
+            }
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/images/game-screen{m}{tps}": {
+            "isFolder": true,
+            "parent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/images",
+            "metaData": {
+                "m": true,
+                "tps": true
+            },
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773194173618,
+                "duration": 79.26574999999997,
+                "success": true
+            }
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/images/game-screen{m}{tps}/ball-gloss.png": {
+            "isFolder": false,
+            "parent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/images/game-screen{m}{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "H6JURg"
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/images/game-screen{m}{tps}/ball.png": {
+            "isFolder": false,
+            "parent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/images/game-screen{m}{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "Vgd00Q"
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/images/game-screen{m}{tps}/collectible.png": {
+            "isFolder": false,
+            "parent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/images/game-screen{m}{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "LZlVIg"
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/images/game-screen{m}{tps}/particle.png": {
+            "isFolder": false,
+            "parent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/images/game-screen{m}{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "55_Ukg"
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/images/game-screen{m}{tps}/white.png": {
+            "isFolder": false,
+            "parent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/images/game-screen{m}{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "4SYIWw"
+        },
+        ".assetpack/texture-packer/images/game-screen.png": {
+            "isFolder": false,
+            "transformParent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/images/game-screen{m}{tps}",
+            "metaData": {
+                "mIgnore": true,
+                "nomip": true
+            },
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/compress/images/game-screen.png": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/images/game-screen.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/public/images/game-screen.png": {
+            "isFolder": false,
+            "transformParent": ".assetpack/compress/images/game-screen.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/compress/images/game-screen.webp": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/images/game-screen.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/public/images/game-screen.webp": {
+            "isFolder": false,
+            "transformParent": ".assetpack/compress/images/game-screen.webp",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/texture-packer/images/game-screen.json": {
+            "isFolder": false,
+            "transformParent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/images/game-screen{m}{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/texture-packer-compress/images/game-screen.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/images/game-screen.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/json/images/game-screen.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer-compress/images/game-screen.png.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/public/images/game-screen.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/json/images/game-screen.png.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/texture-packer-compress/images/game-screen.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/images/game-screen.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/json/images/game-screen.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer-compress/images/game-screen.webp.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/public/images/game-screen.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/json/images/game-screen.webp.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/texture-packer/images/game-screen@0.5x.png": {
+            "isFolder": false,
+            "transformParent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/images/game-screen{m}{tps}",
+            "metaData": {
+                "mIgnore": true,
+                "nomip": true
+            },
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/compress/images/game-screen@0.5x.png": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/images/game-screen@0.5x.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/public/images/game-screen@0.5x.png": {
+            "isFolder": false,
+            "transformParent": ".assetpack/compress/images/game-screen@0.5x.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/compress/images/game-screen@0.5x.webp": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/images/game-screen@0.5x.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/public/images/game-screen@0.5x.webp": {
+            "isFolder": false,
+            "transformParent": ".assetpack/compress/images/game-screen@0.5x.webp",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/texture-packer/images/game-screen@0.5x.json": {
+            "isFolder": false,
+            "transformParent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/images/game-screen{m}{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/texture-packer-compress/images/game-screen@0.5x.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/images/game-screen@0.5x.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/json/images/game-screen@0.5x.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer-compress/images/game-screen@0.5x.png.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/public/images/game-screen@0.5x.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/json/images/game-screen@0.5x.png.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/texture-packer-compress/images/game-screen@0.5x.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/images/game-screen@0.5x.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/json/images/game-screen@0.5x.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer-compress/images/game-screen@0.5x.webp.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/public/images/game-screen@0.5x.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/json/images/game-screen@0.5x.webp.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/images/pause-overlay{m}": {
+            "isFolder": true,
+            "parent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/images",
+            "metaData": {
+                "m": true
+            },
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773094065309,
+                "duration": 0.04758299999980409,
+                "success": true
+            }
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/images/pause-overlay{m}/pause-panel.png": {
+            "isFolder": false,
+            "parent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/images/pause-overlay{m}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true
+            },
+            "transformData": {},
+            "stats": {
+                "date": 1773094065309,
+                "duration": 20.226666000000023,
+                "success": true
+            },
+            "hash": "cDiZkg"
+        },
+        ".assetpack/mipmap/images/pause-overlay{m}/pause-panel.png": {
+            "isFolder": false,
+            "transformParent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/images/pause-overlay{m}/pause-panel.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/compress/images/pause-overlay{m}/pause-panel.png": {
+            "isFolder": false,
+            "transformParent": ".assetpack/mipmap/images/pause-overlay{m}/pause-panel.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true
+            },
+            "transformData": {}
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/public/images/pause-overlay/pause-panel.png": {
+            "isFolder": false,
+            "transformParent": ".assetpack/compress/images/pause-overlay{m}/pause-panel.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/compress/images/pause-overlay{m}/pause-panel.webp": {
+            "isFolder": false,
+            "transformParent": ".assetpack/mipmap/images/pause-overlay{m}/pause-panel.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true
+            },
+            "transformData": {}
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/public/images/pause-overlay/pause-panel.webp": {
+            "isFolder": false,
+            "transformParent": ".assetpack/compress/images/pause-overlay{m}/pause-panel.webp",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/mipmap/images/pause-overlay{m}/pause-panel@0.5x.png": {
+            "isFolder": false,
+            "transformParent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/images/pause-overlay{m}/pause-panel.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/compress/images/pause-overlay{m}/pause-panel@0.5x.png": {
+            "isFolder": false,
+            "transformParent": ".assetpack/mipmap/images/pause-overlay{m}/pause-panel@0.5x.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true
+            },
+            "transformData": {}
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/public/images/pause-overlay/pause-panel@0.5x.png": {
+            "isFolder": false,
+            "transformParent": ".assetpack/compress/images/pause-overlay{m}/pause-panel@0.5x.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/compress/images/pause-overlay{m}/pause-panel@0.5x.webp": {
+            "isFolder": false,
+            "transformParent": ".assetpack/mipmap/images/pause-overlay{m}/pause-panel@0.5x.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true
+            },
+            "transformData": {}
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/public/images/pause-overlay/pause-panel@0.5x.webp": {
+            "isFolder": false,
+            "transformParent": ".assetpack/compress/images/pause-overlay{m}/pause-panel@0.5x.webp",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true
+            },
+            "transformData": {}
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/images/preload{m}": {
+            "isFolder": true,
+            "parent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/images",
+            "metaData": {
+                "m": true
+            },
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773167941378,
+                "duration": 0.725832999999966,
+                "success": true
+            }
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/images/preload{m}/loading.png": {
+            "isFolder": false,
+            "parent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/images/preload{m}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true
+            },
+            "transformData": {},
+            "stats": {
+                "date": 1773167941378,
+                "duration": 33.146041999999966,
+                "success": true
+            },
+            "hash": "6TPoPA"
+        },
+        ".assetpack/mipmap/images/preload{m}/loading.png": {
+            "isFolder": false,
+            "transformParent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/images/preload{m}/loading.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/compress/images/preload{m}/loading.png": {
+            "isFolder": false,
+            "transformParent": ".assetpack/mipmap/images/preload{m}/loading.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true
+            },
+            "transformData": {}
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/public/images/preload/loading.png": {
+            "isFolder": false,
+            "transformParent": ".assetpack/compress/images/preload{m}/loading.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/compress/images/preload{m}/loading.webp": {
+            "isFolder": false,
+            "transformParent": ".assetpack/mipmap/images/preload{m}/loading.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true
+            },
+            "transformData": {}
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/public/images/preload/loading.webp": {
+            "isFolder": false,
+            "transformParent": ".assetpack/compress/images/preload{m}/loading.webp",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/mipmap/images/preload{m}/loading@0.5x.png": {
+            "isFolder": false,
+            "transformParent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/images/preload{m}/loading.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/compress/images/preload{m}/loading@0.5x.png": {
+            "isFolder": false,
+            "transformParent": ".assetpack/mipmap/images/preload{m}/loading@0.5x.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true
+            },
+            "transformData": {}
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/public/images/preload/loading@0.5x.png": {
+            "isFolder": false,
+            "transformParent": ".assetpack/compress/images/preload{m}/loading@0.5x.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/compress/images/preload{m}/loading@0.5x.webp": {
+            "isFolder": false,
+            "transformParent": ".assetpack/mipmap/images/preload{m}/loading@0.5x.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true
+            },
+            "transformData": {}
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/public/images/preload/loading@0.5x.webp": {
+            "isFolder": false,
+            "transformParent": ".assetpack/compress/images/preload{m}/loading@0.5x.webp",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true
+            },
+            "transformData": {}
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/images/title-screen{m}{tps}": {
+            "isFolder": true,
+            "parent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/images",
+            "metaData": {
+                "m": true,
+                "tps": true
+            },
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773100917920,
+                "duration": 291.60454100000004,
+                "success": true
+            }
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/images/title-screen{m}{tps}/Roller.png": {
+            "isFolder": false,
+            "parent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/images/title-screen{m}{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "r-yOIw"
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/images/title-screen{m}{tps}/Run.png": {
+            "isFolder": false,
+            "parent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/images/title-screen{m}{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "6QHHPg"
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/images/title-screen{m}{tps}/button-flat.png": {
+            "isFolder": false,
+            "parent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/images/title-screen{m}{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {},
+            "hash": "gvFHvg"
+        },
+        ".assetpack/texture-packer/images/title-screen@0.5x.png": {
+            "isFolder": false,
+            "transformParent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/images/title-screen{m}{tps}",
+            "metaData": {
+                "mIgnore": true,
+                "nomip": true
+            },
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/compress/images/title-screen@0.5x.png": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/images/title-screen@0.5x.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/public/images/title-screen@0.5x.png": {
+            "isFolder": false,
+            "transformParent": ".assetpack/compress/images/title-screen@0.5x.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/compress/images/title-screen@0.5x.webp": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/images/title-screen@0.5x.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/public/images/title-screen@0.5x.webp": {
+            "isFolder": false,
+            "transformParent": ".assetpack/compress/images/title-screen@0.5x.webp",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/texture-packer/images/title-screen@0.5x.json": {
+            "isFolder": false,
+            "transformParent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/images/title-screen{m}{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/texture-packer-compress/images/title-screen@0.5x.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/images/title-screen@0.5x.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/json/images/title-screen@0.5x.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer-compress/images/title-screen@0.5x.png.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/public/images/title-screen@0.5x.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/json/images/title-screen@0.5x.png.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/texture-packer-compress/images/title-screen@0.5x.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/images/title-screen@0.5x.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/json/images/title-screen@0.5x.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer-compress/images/title-screen@0.5x.webp.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/public/images/title-screen@0.5x.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/json/images/title-screen@0.5x.webp.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/texture-packer/images/title-screen.png": {
+            "isFolder": false,
+            "transformParent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/images/title-screen{m}{tps}",
+            "metaData": {
+                "mIgnore": true,
+                "nomip": true
+            },
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/compress/images/title-screen.png": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/images/title-screen.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/public/images/title-screen.png": {
+            "isFolder": false,
+            "transformParent": ".assetpack/compress/images/title-screen.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/compress/images/title-screen.webp": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/images/title-screen.png",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/public/images/title-screen.webp": {
+            "isFolder": false,
+            "transformParent": ".assetpack/compress/images/title-screen.webp",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true,
+                "mIgnore": true,
+                "nomip": true
+            },
+            "transformData": {}
+        },
+        ".assetpack/texture-packer/images/title-screen.json": {
+            "isFolder": false,
+            "transformParent": "/Users/jason/Projects/TS/Maximum Velocity Racing/raw-assets/images/title-screen{m}{tps}",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/texture-packer-compress/images/title-screen.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/images/title-screen.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/json/images/title-screen.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer-compress/images/title-screen.png.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/public/images/title-screen.png.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/json/images/title-screen.png.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/texture-packer-compress/images/title-screen.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer/images/title-screen.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        ".assetpack/json/images/title-screen.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/texture-packer-compress/images/title-screen.webp.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        },
+        "/Users/jason/Projects/TS/Maximum Velocity Racing/public/images/title-screen.webp.json": {
+            "isFolder": false,
+            "transformParent": ".assetpack/json/images/title-screen.webp.json",
+            "metaData": {},
+            "inheritedMetaData": {
+                "m": true,
+                "tps": true
+            },
+            "transformData": {
+                "page": 0
+            }
+        }
+    }
+}

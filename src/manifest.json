@@ -1,0 +1,252 @@
+{
+  "bundles": [
+    {
+      "name": "default",
+      "assets": [
+        {
+          "alias": [
+            "audio/collect.wav",
+            "collect.wav"
+          ],
+          "src": [
+            "audio/collect.ogg",
+            "audio/collect.mp3"
+          ],
+          "data": {
+            "tags": {}
+          }
+        },
+        {
+          "alias": [
+            "audio/contact-ground.wav",
+            "contact-ground.wav"
+          ],
+          "src": [
+            "audio/contact-ground.ogg",
+            "audio/contact-ground.mp3"
+          ],
+          "data": {
+            "tags": {}
+          }
+        },
+        {
+          "alias": [
+            "audio/double-jump.wav",
+            "double-jump.wav"
+          ],
+          "src": [
+            "audio/double-jump.ogg",
+            "audio/double-jump.mp3"
+          ],
+          "data": {
+            "tags": {}
+          }
+        },
+        {
+          "alias": [
+            "audio/explosion.wav",
+            "explosion.wav"
+          ],
+          "src": [
+            "audio/explosion.ogg",
+            "audio/explosion.mp3"
+          ],
+          "data": {
+            "tags": {}
+          }
+        },
+        {
+          "alias": [
+            "audio/jump.wav",
+            "jump.wav"
+          ],
+          "src": [
+            "audio/jump.ogg",
+            "audio/jump.mp3"
+          ],
+          "data": {
+            "tags": {}
+          }
+        },
+        {
+          "alias": [
+            "audio/start1.wav",
+            "start1.wav"
+          ],
+          "src": [
+            "audio/start1.ogg",
+            "audio/start1.mp3"
+          ],
+          "data": {
+            "tags": {}
+          }
+        },
+        {
+          "alias": [
+            "audio/start2.wav",
+            "start2.wav"
+          ],
+          "src": [
+            "audio/start2.ogg",
+            "audio/start2.mp3"
+          ],
+          "data": {
+            "tags": {}
+          }
+        },
+        {
+          "alias": [
+            "audio/start3.wav",
+            "start3.wav"
+          ],
+          "src": [
+            "audio/start3.ogg",
+            "audio/start3.mp3"
+          ],
+          "data": {
+            "tags": {}
+          }
+        },
+        {
+          "alias": [
+            "audio/start4.wav",
+            "start4.wav"
+          ],
+          "src": [
+            "audio/start4.ogg",
+            "audio/start4.mp3"
+          ],
+          "data": {
+            "tags": {}
+          }
+        },
+        {
+          "alias": [
+            "fonts/BebasNeue-Regular.ttf",
+            "BebasNeue-Regular.ttf"
+          ],
+          "src": [
+            "fonts/BebasNeue-Regular.ttf"
+          ],
+          "data": {
+            "tags": {}
+          }
+        },
+        {
+          "alias": [
+            "fonts/Bungee-Regular.ttf",
+            "Bungee-Regular.ttf"
+          ],
+          "src": [
+            "fonts/Bungee-Regular.ttf"
+          ],
+          "data": {
+            "tags": {}
+          }
+        },
+        {
+          "alias": [
+            "fonts/OpenSans-SemiBold.ttf",
+            "OpenSans-SemiBold.ttf"
+          ],
+          "src": [
+            "fonts/OpenSans-SemiBold.ttf"
+          ],
+          "data": {
+            "tags": {}
+          }
+        }
+      ]
+    },
+    {
+      "name": "game-screen",
+      "assets": [
+        {
+          "alias": [
+            "images/game-screen",
+            "game-screen"
+          ],
+          "src": [
+            "images/game-screen@0.5x.webp.json",
+            "images/game-screen@0.5x.png.json",
+            "images/game-screen.webp.json",
+            "images/game-screen.png.json"
+          ],
+          "data": {
+            "tags": {
+              "m": true,
+              "tps": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "pause-overlay",
+      "assets": [
+        {
+          "alias": [
+            "images/pause-overlay/pause-panel.png",
+            "pause-panel.png"
+          ],
+          "src": [
+            "images/pause-overlay/pause-panel@0.5x.webp",
+            "images/pause-overlay/pause-panel@0.5x.png",
+            "images/pause-overlay/pause-panel.webp",
+            "images/pause-overlay/pause-panel.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "preload",
+      "assets": [
+        {
+          "alias": [
+            "images/preload/loading.png",
+            "loading.png"
+          ],
+          "src": [
+            "images/preload/loading@0.5x.webp",
+            "images/preload/loading@0.5x.png",
+            "images/preload/loading.webp",
+            "images/preload/loading.png"
+          ],
+          "data": {
+            "tags": {
+              "m": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "title-screen",
+      "assets": [
+        {
+          "alias": [
+            "images/title-screen",
+            "title-screen"
+          ],
+          "src": [
+            "images/title-screen@0.5x.webp.json",
+            "images/title-screen@0.5x.png.json",
+            "images/title-screen.webp.json",
+            "images/title-screen.png.json"
+          ],
+          "data": {
+            "tags": {
+              "m": true,
+              "tps": true
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
