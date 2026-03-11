@@ -116,9 +116,7 @@ export class ReadyState implements SystemState<RunnerSystem> {
         if (!this._text || !this._label) {
             return;
         }
-        if(sound.exists(`audio/start${this._index + 1}.wav`)) {
-            sound.play(`audio/start${this._index + 1}.wav`);
-        }
+        sound.play(`audio/start${this._index + 1}.wav`);
         const token = ++this._animToken;
         const isFinal = this._label === ReadyState.LABELS[ReadyState.LABELS.length - 1];
 

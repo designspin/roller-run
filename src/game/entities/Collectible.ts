@@ -33,7 +33,6 @@ export class Collectible extends Container {
         this.active = true;
         this.visible = true;
 
-        // start subtle pulse/glow animation
         const token = ++this._juiceToken;
         const minScale = 0.92;
         const maxScale = 1.12;
@@ -52,7 +51,6 @@ export class Collectible extends Container {
                     this.sprite.scale.set(s);
                 }, 900, EasingFunctions.easeOutCubic);
             }
-            // restore to default when stopping
             if (token === this._juiceToken) this.sprite.scale.set(1);
         })();
     }

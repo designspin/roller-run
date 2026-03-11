@@ -10,7 +10,6 @@ import { DeadState } from "./DeadState";
 import { ReadyState } from "./ReadyState";
 import { getDifficultyParams } from "@/game/difficulty";
 import { sound } from "@pixi/sound";
-// (removed RNG usage; collectibles handled by TrackGenerator)
 
 export class RunnerSystem implements System, SystemStateMachine<RunnerSystem> {
     public static SYSTEM_ID = 'runner';
@@ -212,8 +211,6 @@ export class RunnerSystem implements System, SystemStateMachine<RunnerSystem> {
         this._progress += progressDelta;
         this._totalProgress += progressDelta;
 
-        // collectible spawning is handled at track generation time by TrackGenerator
-
         const pos = this._trackSystem.generator.getPositionAtProgress(this._progress);
         this._ball.positionOnTrack(pos, hw);
 
@@ -262,7 +259,7 @@ export class RunnerSystem implements System, SystemStateMachine<RunnerSystem> {
         this.switchState(new DeadState());
     }
 
-    public beginImpactDeath(pos: { x: number; y: number; nx: number; ny: number }) {
+    public beginImpactDeath(_pos: { x: number; y: number; nx: number; ny: number }) {
         const ballX = this._ball.fixedX;
         const ballY = this._ball.fixedY;
         const screenX = this._trackSystem.renderer.x + ballX;
@@ -275,7 +272,6 @@ export class RunnerSystem implements System, SystemStateMachine<RunnerSystem> {
         this._particleSystem.spawnBallExplosion(spawnX, spawnY, 0, 0, this._ball.side, clampedScreenX);
         this._ball.explode();
         this.switchState(new DeadState());
-        void pos;
     }
 
     public rebaseWorld(offsetX: number, offsetY: number) {
@@ -295,9 +291,7 @@ export class RunnerSystem implements System, SystemStateMachine<RunnerSystem> {
             return;
         }
 
-        if(sound.exists('audio/contact-ground.wav')) {
-            sound.play('audio/contact-ground.wav');
-        }
+        sound.play('audio/contact-ground.wav');
         this._shakeTime = RunnerSystem.LANDING_SHAKE_DURATION;
         this._shakeStrength = 7 + intensity * 11;
         this._shakePhase = 0;

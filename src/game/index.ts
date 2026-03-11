@@ -8,12 +8,14 @@ import { ParticleSystem } from "./systems/ParticleSystem";
 import { CollectibleSystem } from "./systems/CollectibleSystem";
 import { SparkSystem } from "./systems/SparkSystem";
 import { BlockerSystem } from "./systems/BlockerSystem";
+import type { SeededRandom } from "@/utilities/seededRandom";
 
 export class Game {
     public stage = new Container();
     public gameContainer = new Container();
     public uiContainer = new Container();
     public systems: SystemRunner;
+    public rng!: SeededRandom;
 
     constructor() {
         this.stage.addChild(this.gameContainer, this.uiContainer);

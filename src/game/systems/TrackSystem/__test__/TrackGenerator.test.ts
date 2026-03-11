@@ -18,7 +18,7 @@ describe("TrackGenerator", () => {
             const prev = points[i - 1];
             const curr = points[i];
 
-            const ySpacing = curr.y - prev.y;
+            const ySpacing = prev.y - curr.y;
             expect(ySpacing).toBeGreaterThanOrEqual(config.ySpacingMin);
             expect(ySpacing).toBeLessThanOrEqual(config.ySpacingMax);
 

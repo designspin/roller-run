@@ -22,6 +22,8 @@ export interface System<S extends Game = Game> {
     reset?: () => void;
     fixedUpdate?: (fixedDelta: number) => void;
     update?: (interpolated: number) => void;
+    rebase?: (offsetX: number, offsetY: number) => void;
+    adjustProgress?: (delta: number) => void;
 }
 
 interface SystemClass<GAME extends Game = Game, SYSTEM extends System<GAME> = System<GAME>> {

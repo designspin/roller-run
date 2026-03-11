@@ -6,7 +6,6 @@ import { ParticleSystem } from "../ParticleSystem";
 import { Collectible } from "@/game/entities/Collectible";
 import { RunnerSystem } from "../RunnerSystem";
 import { sound } from "@pixi/sound";
-import { SeededRandom } from "@/utilities/seededRandom";
 
 export class CollectibleSystem implements System {
     public static SYSTEM_ID = 'collectible';
@@ -16,8 +15,7 @@ export class CollectibleSystem implements System {
     private _pool: Collectible[] = [];
     private _poolSize = 48;
     private _lastProcessedSegment = -1;
-    private _rnd!: SeededRandom;
-    private _sparkRate = 1.6; // sparks per second per coin (increased)
+    private _sparkRate = 1.6;
 
     public init() {
         const rendererParent = this.game.systems.get(TrackSystem).renderer;
@@ -32,8 +30,6 @@ export class CollectibleSystem implements System {
             this._pool.push(c);
             this._container.addChild(c);
         }
-
-        this._rnd = new SeededRandom(Date.now() % 1000000);
     }
 
     private _getFree() {
@@ -50,12 +46,11 @@ export class CollectibleSystem implements System {
             if (!c) return;
 
             const coinHalf = (c.sprite.width || 32) * 0.5;
-            const inset = 16; // keep coins inside the rails
+            const inset = 16;
 
             if (s === 0) {
                 c.place(pos.x, pos.y - 24);
             } else {
-                // place inside the rail by offsetting from centerline toward the side
                 const offset = Math.max(32, hw - coinHalf - inset);
                 c.place(pos.x + pos.nx * offset * s, pos.y + pos.ny * offset * s - 8);
             }
@@ -72,7 +67,7 @@ export class CollectibleSystem implements System {
     public fixedUpdate(fixedDelta: number) {
         const track = this.game.systems.get(TrackSystem);
         const segments = track.generator.segments;
-        // process any newly generated segments and spawn collectibles attached to them
+
         for (let i = this._lastProcessedSegment + 1; i < segments.length; i++) {
             const seg = segments[i];
             if (seg.collectible) {
@@ -90,12 +85,12 @@ export class CollectibleSystem implements System {
             this._lastProcessedSegment = i;
         }
 
-        // idle spark chance per active collectible
         const ps = this.game.systems.get(ParticleSystem);
+        const rng = this.game.rng;
         for (const c of this._pool) {
             if (!c.active) continue;
-            if (this._rnd.next() < this._sparkRate * fixedDelta) {
-                ps?.spawnCollectSpark?.(c.xFixed, c.yFixed);
+            if (rng.next() < this._sparkRate * fixedDelta) {
+                ps.spawnCollectSpark(c.xFixed, c.yFixed);
             }
         }
     }
@@ -109,17 +104,15 @@ export class CollectibleSystem implements System {
 
             c.interpolate(alpha);
 
-            // collision check against ball (simple distance)
             const dx = c.x - ball.x;
             const dy = c.y - ball.y;
             const d2 = dx * dx + dy * dy;
             const thresh = (ball.radius + (c.sprite.width * 0.5 || 16)) ** 2;
             if (d2 <= thresh) {
                 c.clear();
-                if (sound.exists('audio/collect.wav')) sound.play('audio/collect.wav');
-                // small particle burst on collect
+                sound.play('audio/collect.wav');
                 const ps = this.game.systems.get(ParticleSystem);
-                ps?.spawnCollectBurst?.(c.x, c.y);
+                ps.spawnCollectBurst(c.x, c.y);
             }
         }
     }

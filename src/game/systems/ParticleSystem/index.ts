@@ -3,7 +3,6 @@ import type { System } from "@/game/SystemRunner";
 import { TrackSystem } from "../TrackSystem";
 import { Container, Sprite, Texture } from "pixi.js";
 import { createParticleRecord, resetParticle, type ParticleRecord } from "./ParticleRecord";
-import { SeededRandom } from "@/utilities/seededRandom";
 
 export class ParticleSystem implements System {
     public static SYSTEM_ID = 'particle';
@@ -22,8 +21,7 @@ export class ParticleSystem implements System {
 
     public spawnCollectBurst(x: number, y: number) {
         const particleCount = 12;
-        const trackGen = this.game.systems.get(TrackSystem) as any;
-        const rnd: SeededRandom = trackGen?.generator?._rng ?? new SeededRandom(Date.now());
+        const rnd = this.game.rng;
         const tintChoices = [0xffd86b, 0xffe59a, 0xffc84b];
 
         for (let i = 0; i < particleCount; i++) {
@@ -57,8 +55,7 @@ export class ParticleSystem implements System {
     }
 
     public spawnCollectSpark(x: number, y: number) {
-        const trackGen = this.game.systems.get(TrackSystem) as any;
-        const rnd: SeededRandom = trackGen?.generator?._rng ?? new SeededRandom(Date.now());
+        const rnd = this.game.rng;
         const particle = this._getFreeParticle();
         if (!particle) return;
 
@@ -87,25 +84,17 @@ export class ParticleSystem implements System {
         particle.sprite.tint = particle.tint;
     }
 
-    public async init() {
+    public init() {
         this.game.systems.get(TrackSystem).renderer.addChild(this._container);
 
         const particleTexture = Texture.from('particle.png');
-        
+
         for(let i = 0; i < this._poolSize; i++) {
             const record = createParticleRecord(new Sprite(particleTexture));
             resetParticle(record);
             this._particles.push(record);
             this._container.addChild(record.sprite);
         }
-    }
-
-    public async awake() {
-
-    }
-
-    public start() {
-
     }
 
     public update(alpha: number) {
@@ -137,7 +126,7 @@ export class ParticleSystem implements System {
 
             particle.prevX = particle.x;
             particle.prevY = particle.y;
-            
+
             particle.x += particle.vx * fixedDelta;
             particle.y += particle.vy * fixedDelta;
 
@@ -185,8 +174,7 @@ export class ParticleSystem implements System {
         screenX: number,
     ) {
         const particleCount = 56;
-        const trackGen = this.game.systems.get(TrackSystem) as any;
-        const rnd: SeededRandom = trackGen?.generator?._rng ?? new SeededRandom(Date.now());
+        const rnd = this.game.rng;
         const centerDir = screenX < this.game.gameContainer.width * 0.5 ? 1 : -1;
         const centerBias = centerDir * 320;
         const sideBias = side * 70;
@@ -228,8 +216,7 @@ export class ParticleSystem implements System {
     ) {
         const intensity = Math.min(1, impact / 700);
         const particleCount = 14 + Math.round(intensity * 14);
-        const trackGen = this.game.systems.get(TrackSystem) as any;
-        const rnd: SeededRandom = trackGen?.generator?._rng ?? new SeededRandom(Date.now());
+        const rnd = this.game.rng;
         const tangentX = ny;
         const tangentY = -nx;
         const outwardX = nx * side;

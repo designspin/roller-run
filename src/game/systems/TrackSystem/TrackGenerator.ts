@@ -25,7 +25,7 @@ const defaults: Required<TrackGenConfig> = {
 }
 
 export class TrackGenerator {
-    private _rng: SeededRandom;
+    public readonly rng: SeededRandom;
     private _points: PointData[] = [];
     private _segments: TrackSegment[] = [];
     private _gapCooldown = 5;
@@ -37,8 +37,8 @@ export class TrackGenerator {
 
     private _config: Required<TrackGenConfig>;
 
-    constructor(seed: number, config: TrackGenConfig = {}) { 
-        this._rng = new SeededRandom(seed);
+    constructor(seed: number, config: TrackGenConfig = {}) {
+        this.rng = new SeededRandom(seed);
         this._config = { ...defaults, ...config };
 
         for(let i = 0; i < 15; i++) {
@@ -58,8 +58,8 @@ export class TrackGenerator {
         const { xMin, xMax, ySpacingMin, ySpacingMax, xWanderMax } = this._config;
         const lastPoint = this._points.length > 0 ? this._points[this._points.length - 1] : { x: (xMin + xMax) / 2 , y: 1280 };
 
-        const newX = Math.max(xMin, Math.min(xMax, lastPoint.x + this._rng.nextRange(-xWanderMax, xWanderMax)));
-        const newY = lastPoint.y - this._rng.nextRange(ySpacingMin, ySpacingMax);
+        const newX = Math.max(xMin, Math.min(xMax, lastPoint.x + this.rng.nextRange(-xWanderMax, xWanderMax)));
+        const newY = lastPoint.y - this.rng.nextRange(ySpacingMin, ySpacingMax);
 
         this._points.push({ x: newX, y: newY });
 
@@ -71,8 +71,8 @@ export class TrackGenerator {
 
         if(this._gapCooldown > 0) {
             this._gapCooldown--;
-        } else if(this._rng.next() < this._gapProbability) {
-            if(this._rng.next() < 0.5) {
+        } else if(this.rng.next() < this._gapProbability) {
+            if(this.rng.next() < 0.5) {
                 segment.gapLeft = true;
             } else {
                 segment.gapRight = true;
@@ -80,19 +80,15 @@ export class TrackGenerator {
             this._gapCooldown = this._gapMinCooldown;
         }
 
-        // collectible placement: decide per-segment using the same RNG so it's deterministic
-        if (this._collectibleCooldown > 0) {
+            if (this._collectibleCooldown > 0) {
             this._collectibleCooldown--;
-        } else if (this._rng.next() < this._collectibleProbability) {
-            const r = this._rng.next();
+        } else if (this.rng.next() < this._collectibleProbability) {
+            const r = this.rng.next();
             if (r < 0.12) {
                 segment.collectible = 'both';
             } else if (r < 0.66) {
-                segment.collectible = this._rng.next() < 0.5 ? 'left' : 'right';
-                if (this._rng.next() < 0.25) {
-                    // occasionally tag center as well by storing 'both' with intent to spawn center separately
-                    // we'll keep it simple and not tag center here
-                }
+                segment.collectible = this.rng.next() < 0.5 ? 'left' : 'right';
+                this.rng.next();
             } else {
                 segment.collectible = 'center';
             }

@@ -5,6 +5,9 @@ import { TrackRenderer } from "./TrackRenderer";
 import { RunnerSystem } from "../RunnerSystem";
 import { getDifficultyParams } from "@/game/difficulty";
 
+const REBASEABLE_SYSTEMS = ['collectible', 'spark', 'blocker', 'particle'] as const;
+const PROGRESS_SYSTEMS = ['spark', 'blocker'] as const;
+
 export class TrackSystem implements System {
     public static SYSTEM_ID = 'track';
     private static readonly RENDER_SEGMENT_COUNT = 8;
@@ -23,23 +26,16 @@ export class TrackSystem implements System {
         return this._trackRenderer;
     }
 
-    public async init() {
+    public init() {
         this.generator = new TrackGenerator(42);
+        this.game.rng = this.generator.rng;
         this._trackRenderer = new TrackRenderer(this.generator);
         this.game.addToGame(this._trackRenderer);
-    }
-
-    public async awake() {
-
     }
 
     public start() {
         this._trackRenderer.rebuild(TrackSystem.RENDER_SEGMENT_COUNT);
         this._isDirty = false;
-    }
-
-    public update() {
-
     }
 
     public fixedUpdate(_fixedDelta: number) {
@@ -60,25 +56,20 @@ export class TrackSystem implements System {
             this.generator.points.splice(0, cullBehind);
             this.generator.segments.splice(0, cullBehind);
             runner.adjustProgress(-cullBehind);
-            (this.game.systems.allSystems.get('spark') as { adjustProgress: (d: number) => void } | undefined)
-                ?.adjustProgress(-cullBehind);
-            (this.game.systems.allSystems.get('blocker') as { adjustProgress: (d: number) => void } | undefined)
-                ?.adjustProgress(-cullBehind);
+
+            for (const id of PROGRESS_SYSTEMS) {
+                this.game.systems.allSystems.get(id)?.adjustProgress?.(-cullBehind);
+            }
             changed = true;
         }
 
         if (runner.worldCenterY < TrackSystem.REBASE_Y_THRESHOLD) {
             this.generator.rebase(0, runner.worldCenterY);
             runner.rebaseWorld(0, runner.worldCenterY);
-            // Shift other systems that maintain prev/current positions so interpolation remains continuous
-            (this.game.systems.allSystems.get('collectible') as { rebase?: (x: number, y: number) => void } | undefined)
-                ?.rebase?.(0, runner.worldCenterY);
-            (this.game.systems.allSystems.get('spark') as { rebase?: (x: number, y: number) => void } | undefined)
-                ?.rebase?.(0, runner.worldCenterY);
-            (this.game.systems.allSystems.get('blocker') as { rebase?: (x: number, y: number) => void } | undefined)
-                ?.rebase?.(0, runner.worldCenterY);
-            (this.game.systems.allSystems.get('particle') as { rebase?: (x: number, y: number) => void } | undefined)
-                ?.rebase?.(0, runner.worldCenterY);
+
+            for (const id of REBASEABLE_SYSTEMS) {
+                this.game.systems.allSystems.get(id)?.rebase?.(0, runner.worldCenterY);
+            }
             changed = true;
         }
 
@@ -86,10 +77,6 @@ export class TrackSystem implements System {
             this._trackRenderer.rebuild(TrackSystem.RENDER_SEGMENT_COUNT);
             this._isDirty = false;
         }
-    }
-
-    public end() {
-
     }
 
     public reset() {

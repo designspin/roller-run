@@ -1,4 +1,4 @@
-import { Assets, Container, Sprite, Texture, Ticker } from "pixi.js";
+import { Container, Sprite, Ticker } from "pixi.js";
 import type { AppScreen } from "@/navigation/AppScreen";
 import { designConfig } from "@/game/designConfig";
 
@@ -11,18 +11,14 @@ export class LoadScreen extends Container implements AppScreen {
     constructor() {
         super();
 
-        this._spinner = new Sprite(Texture.EMPTY);
+        this._spinner = Sprite.from("images/preload/loading.png");
         this._spinner.anchor.set(0.5);
         this.addChild(this._spinner);
 
         this._layout();
     }
 
-    public async show() {
-        const texture = Assets.get<Texture>("images/preload/loading.png")
-            ?? await Assets.load<Texture>("images/preload/loading.png");
-
-        this._spinner.texture = texture;
+    public show() {
         this.visible = true;
         this.alpha = 1;
         this._layout();
