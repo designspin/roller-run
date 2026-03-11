@@ -28,8 +28,7 @@ export class TrackSystem implements System {
     }
 
     public init() {
-        this.generator = new TrackGenerator(42);
-        this.game.rng = this.generator.rng;
+        this.generator = new TrackGenerator(this.game.rng);
         this._trackRenderer = new TrackRenderer(this.generator);
         this.game.addToGame(this._trackRenderer);
     }

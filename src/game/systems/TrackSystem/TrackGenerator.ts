@@ -1,4 +1,4 @@
-import { SeededRandom } from "@/utilities/seededRandom";
+import type { SeededRandom } from "@/utilities/seededRandom";
 import type { PointData } from "pixi.js";
 import { catmullRom, catmullRomTangent } from "@/utilities/math";
 
@@ -37,8 +37,8 @@ export class TrackGenerator {
 
     private _config: Required<TrackGenConfig>;
 
-    constructor(seed: number, config: TrackGenConfig = {}) {
-        this.rng = new SeededRandom(seed);
+    constructor(rng: SeededRandom, config: TrackGenConfig = {}) {
+        this.rng = rng;
         this._config = { ...defaults, ...config };
 
         for(let i = 0; i < 15; i++) {

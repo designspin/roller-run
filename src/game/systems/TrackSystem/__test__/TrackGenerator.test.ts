@@ -1,5 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { TrackGenerator } from "../TrackGenerator";
+import { SeededRandom } from "@/utilities/seededRandom";
 
 describe("TrackGenerator", () => {
     const config = {
@@ -11,7 +12,7 @@ describe("TrackGenerator", () => {
     };
 
     it("generates points with correct spacing and wandering", () => {
-        const generator = new TrackGenerator(12345, config);
+        const generator = new TrackGenerator(new SeededRandom(12345), config);
         const points = generator.points;
 
         for(let i = 1; i < points.length; i++) {
@@ -30,8 +31,8 @@ describe("TrackGenerator", () => {
     });
 
     it("generates consistent points for the same seed", () => {
-        const generator1 = new TrackGenerator(12345, config);
-        const generator2 = new TrackGenerator(12345, config);
+        const generator1 = new TrackGenerator(new SeededRandom(12345), config);
+        const generator2 = new TrackGenerator(new SeededRandom(12345), config);
 
         expect(generator1.points).toEqual(generator2.points);
     });
