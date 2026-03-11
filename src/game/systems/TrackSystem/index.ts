@@ -65,8 +65,6 @@ export class TrackSystem implements System {
         }
 
         if (runner.worldCenterY < TrackSystem.REBASE_Y_THRESHOLD) {
-            // defer the actual coordinate rebase until after all systems have run their fixedUpdate
-            // to avoid ordering/race issues where other systems clear or sample coordinates mid-tick.
             if (this._pendingRebase === null) {
                 this._pendingRebase = runner.worldCenterY;
                 this.game.systems.onAfterFixedUpdate((_) => {
@@ -77,9 +75,7 @@ export class TrackSystem implements System {
                     for (const id of REBASEABLE_SYSTEMS) {
                         this.game.systems.allSystems.get(id)?.rebase?.(0, offsetY);
                     }
-
-                    // rebuild renderer now that rebase is applied
-                    this._trackRenderer.rebuild(TrackSystem.RENDER_SEGMENT_COUNT);
+                     this._trackRenderer.rebuild(TrackSystem.RENDER_SEGMENT_COUNT);
                     this._isDirty = false;
                     this._pendingRebase = null;
                 }, { once: true });

@@ -91,7 +91,6 @@ export class CollectibleSystem implements System {
         for (const c of this._pool) {
             if (!c.active) continue;
             if (c.yFixed > ballY + 800) {
-                debugger;
                 c.clear();
                 continue;
             }
