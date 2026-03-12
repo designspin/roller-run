@@ -40,7 +40,8 @@ export class PauseSystem implements System {
 
     private _visibilityPause() {
         if (document.visibilityState !== 'visible') {
-            if (!this.isPaused) this.pause();
+            const runner = this.game.systems.get(RunnerSystem);
+            if (!this.isPaused && !runner.isDead) this.pause();
         }
     }
 
