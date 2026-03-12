@@ -1,38 +1,44 @@
-import { animate, EasingFunctions } from "@/utilities/animate";
-import { Container, Sprite } from "pixi.js";
+import { Container, EventEmitter } from "pixi.js";
 import { sound } from "@pixi/sound";
+import { designConfig } from "@/game/designConfig";
 
 export type BallPhysicsResult = {
     landed: boolean;
     landingImpact: number;
 };
 
+export type BallEvents = {
+    jump: [];
+    doubleJump: [];
+    land: [impactSpeed: number];
+    fallStart: [];
+    explode: [];
+    reset: [];
+    frameUpdate: [dx: number, dy: number, rotationDelta: number, isFlipping: boolean];
+};
+
 export class Ball extends Container {
-    private _visual: Container;
-    private _sprite: Sprite;
-    private _gloss: Sprite;
-    private _juiceToken: number = 0;
+    readonly events = new EventEmitter<BallEvents>();
+    private _jumpOffset = 0;
+    private _jumpVelocity = 0;
+    private _isJumping = false;
+    private _isFlipping = false;
+    private readonly _gravity = 800;
+    private readonly _jumpStrength = 500;
+    private _side = 1;
+    private _prevX = 0;
+    private _prevY = 0;
 
-    private _jumpOffset: number = 0;
-    private _jumpVelocity: number = 0;
-    private _isJumping: boolean = false;
-    private _isFlipping: boolean = false;
-    private _gravity: number = 800;
-    private _jumpStrength: number = 500;
-    private _side: number = 1;
-    private _prevX: number = 0;
-    private _prevY: number = 0;
-
-    private _fixedX: number = 0;
-    private _fixedY: number = 0;
-    private _prevFixedX: number = 0;
-    private _prevFixedY: number = 0;
-    private _isFalling: boolean = false;
-    private _hasExploded: boolean = false;
-    private _fallVelocityX: number = 0;
-    private _fallVelocityY: number = 0;
-    private _fallGravityX: number = 0;
-    private _fallGravityY: number = 0;
+    private _fixedX = 0;
+    private _fixedY = 0;
+    private _prevFixedX = 0;
+    private _prevFixedY = 0;
+    private _isFalling = false;
+    private _hasExploded = false;
+    private _fallVelocityX = 0;
+    private _fallVelocityY = 0;
+    private _fallGravityX = 0;
+    private _fallGravityY = 0;
 
     get side() { return this._side; }
     get isJumping() { return this._isJumping; }
@@ -41,34 +47,17 @@ export class Ball extends Container {
     get fallVelocityX() { return this._fallVelocityX; }
     get fallVelocityY() { return this._fallVelocityY; }
     get jumpOffset() { return this._jumpOffset; }
-    get radius() { return this._sprite.width / 2; }
+    get radius() { return designConfig.ball.radius; }
     get fixedX() { return this._fixedX; }
     get fixedY() { return this._fixedY; }
 
-    constructor() {
-        super();
-        this._visual = new Container();
-        this.addChild(this._visual);
-
-        this._sprite = Sprite.from("ball.png");
-        this._sprite.anchor.set(0.5);
-        this._visual.addChild(this._sprite);
-
-        this._gloss = Sprite.from("ball-gloss.png");
-        this._gloss.anchor.set(0.5);
-        this._gloss.scale.set(0.95);
-        this._visual.addChild(this._gloss);
-    }
-
     public startJump() {
         if (this._isJumping) return;
-        if(sound.exists('audio/jump.wav')) {
-            sound.play('audio/jump.wav');
-        }
+        if (sound.exists('audio/jump.wav')) sound.play('audio/jump.wav');
         this._isJumping = true;
         this._isFlipping = false;
         this._jumpVelocity = this._jumpStrength;
-        this._playLaunchJuice(1);
+        this.events.emit('jump');
     }
 
     public updatePhysics(fixedDelta: number, hw: number): BallPhysicsResult {
@@ -78,12 +67,10 @@ export class Ball extends Container {
         if (this._isFalling) {
             this._prevFixedX = this._fixedX;
             this._prevFixedY = this._fixedY;
-
             this._fallVelocityX += this._fallGravityX * fixedDelta;
             this._fallVelocityY += this._fallGravityY * fixedDelta;
             this._fixedX += this._fallVelocityX * fixedDelta;
             this._fixedY += this._fallVelocityY * fixedDelta;
-
             return { landed, landingImpact };
         }
 
@@ -115,21 +102,17 @@ export class Ball extends Container {
             }
         }
 
-        if (landed) {
-            this._playLandingJuice(landingImpact);
-        }
+        if (landed) this.events.emit('land', landingImpact);
 
         return { landed, landingImpact };
     }
 
     public convertToFlip() {
         if (!this._isJumping || this._isFlipping) return;
-        if(sound.exists('audio/double-jump.wav')) {
-            sound.play('audio/double-jump.wav');
-        }
+        if (sound.exists('audio/double-jump.wav')) sound.play('audio/double-jump.wav');
         this._isFlipping = true;
         this._jumpVelocity = this._jumpStrength * 2;
-        this._playLaunchJuice(1.15);
+        this.events.emit('doubleJump');
     }
 
     public startFall(pos: { x: number; y: number; nx: number; ny: number }, hw: number) {
@@ -141,8 +124,7 @@ export class Ball extends Container {
         this._isFlipping = false;
         this._jumpOffset = 0;
         this._jumpVelocity = 0;
-        this._sprite.visible = true;
-        this._gloss.visible = true;
+        this.events.emit('fallStart');
 
         this._prevFixedX = this._fixedX;
         this._prevFixedY = this._fixedY;
@@ -162,18 +144,14 @@ export class Ball extends Container {
 
     public explode() {
         if (this._hasExploded) return;
-        if(sound.exists('audio/explosion.wav')) {
-            sound.play('audio/explosion.wav');
-        }
+        if (sound.exists('audio/explosion.wav')) sound.play('audio/explosion.wav');
         this._hasExploded = true;
-        this._sprite.visible = false;
-        this._gloss.visible = false;
+        this.events.emit('explode');
     }
 
     public positionOnTrack(pos: { x: number; y: number; nx: number; ny: number }, hw: number) {
         this._prevFixedX = this._fixedX;
         this._prevFixedY = this._fixedY;
-
         this._fixedX = pos.x + pos.nx * (hw - this.radius - this._jumpOffset) * this._side;
         this._fixedY = pos.y + pos.ny * (hw - this.radius - this._jumpOffset) * this._side;
     }
@@ -212,15 +190,15 @@ export class Ball extends Container {
         const dx = this.x - this._prevX;
         const dy = this.y - this._prevY;
         const distance = Math.sqrt(dx * dx + dy * dy);
+        const rotationDelta = (distance / this.radius) * this._side;
 
-        this._sprite.rotation += (distance / this.radius) * this._side;
+        this.events.emit('frameUpdate', dx, dy, rotationDelta, this._isFlipping);
 
         this._prevX = this.x;
         this._prevY = this.y;
     }
 
     public reset() {
-        this._juiceToken++;
         this._side = 1;
         this._jumpOffset = 0;
         this._jumpVelocity = 0;
@@ -240,70 +218,6 @@ export class Ball extends Container {
         this._prevFixedY = 0;
         this.x = 0;
         this.y = 0;
-        this._sprite.visible = true;
-        this._gloss.visible = true;
-        this._sprite.rotation = 0;
-        this._applyScales(1, 1);
-    }
-
-    private _applyScales(scaleX: number, scaleY: number) {
-        this._visual.scale.set(scaleX, scaleY);
-    }
-
-    private _playLaunchJuice(intensity: number) {
-        const token = ++this._juiceToken;
-        const stretch = Math.min(1.18, 1 + 0.12 * intensity);
-        const squash = Math.max(0.84, 1 - 0.1 * intensity);
-
-        this._applyScales(squash, stretch);
-
-        void animate(
-            (t) => {
-                if (token !== this._juiceToken) return;
-
-                const scaleX = squash + (1 - squash) * t;
-                const scaleY = stretch + (1 - stretch) * t;
-                this._applyScales(scaleX, scaleY);
-            },
-            170,
-            EasingFunctions.easeOutCubic,
-        );
-    }
-
-    private _playLandingJuice(impactSpeed: number) {
-        const token = ++this._juiceToken;
-        const intensity = Math.min(1, impactSpeed / 700);
-        const squashX = 1 + 0.22 * intensity;
-        const squashY = 1 - 0.24 * intensity;
-        const reboundX = 1 - 0.08 * intensity;
-        const reboundY = 1 + 0.1 * intensity;
-
-        this._applyScales(squashX, squashY);
-
-        void animate(
-            (t) => {
-                if (token !== this._juiceToken) return;
-
-                const scaleX = squashX + (reboundX - squashX) * t;
-                const scaleY = squashY + (reboundY - squashY) * t;
-                this._applyScales(scaleX, scaleY);
-            },
-            90,
-            EasingFunctions.easeOutQuad,
-        ).then(() => {
-            if (token !== this._juiceToken) return;
-
-            void animate(
-                (t) => {
-                    if (token !== this._juiceToken) return;
-
-                    const scaleX = reboundX + (1 - reboundX) * t;
-                    const scaleY = reboundY + (1 - reboundY) * t;
-                    this._applyScales(scaleX, scaleY);
-                },
-                150,
-                EasingFunctions.easeOutCubic,
-            );
-        });
+        this.events.emit('reset');
     }
 }

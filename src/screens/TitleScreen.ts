@@ -40,6 +40,7 @@ export class TitleScreen extends Container implements AppScreen {
         });
         this._playBtn.anchor.set(0.5);
         this._playBtn.onPress.connect(() => {
+            this._playBtn.enabled = false;
             navigation.gotoScreen(GameScreen);
         });
 
@@ -49,6 +50,7 @@ export class TitleScreen extends Container implements AppScreen {
     }
 
     public prepare() {
+        this._playBtn.enabled = true;
         this._topAnimContainer.alpha = 0;
         this._bottomAnimContainer.alpha = 0;
     }

@@ -4,6 +4,7 @@ import { TrackSystem } from "../TrackSystem";
 import { InputSystem } from "../InputSystem/input";
 import { InputAction } from "../InputSystem/InputAction";
 import { Ball } from "@/game/entities/Ball";
+import { BallEffects } from "@/game/entities/BallEffects";
 import { designConfig } from "@/game/designConfig";
 import { ParticleSystem } from "../ParticleSystem";
 import { DeadState } from "./DeadState";
@@ -102,6 +103,8 @@ export class RunnerSystem implements System, SystemStateMachine<RunnerSystem> {
         this._particleSystem = this.game.systems.get(ParticleSystem);
 
         this._ball = new Ball();
+        const effects = new BallEffects(this._ball);
+        this._ball.addChild(effects);
         this._trackSystem.renderer.addChild(this._ball);
 
     }

@@ -7,6 +7,9 @@ export const designConfig = {
         width: 720,
         height: 1280,
     },
+    ball: {
+        radius: 32,
+    },
     events: resizeEmitter,
     resize(screenWidth: number, screenHeight: number) {
         const aspect = screenHeight / screenWidth;
